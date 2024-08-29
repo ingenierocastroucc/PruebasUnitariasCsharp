@@ -1,3 +1,4 @@
+using Xunit;
 namespace StringManipulation.Tests
 {
     public class UnitTest1
