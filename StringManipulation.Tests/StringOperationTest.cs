@@ -10,7 +10,7 @@ namespace StringManipulation.Tests
 {
     public class StringOperationTest
     {
-        [Fact]
+        [Fact (Skip = "Se omite prueba unitaria con la finalidad de mostrar la funcionalidad de Skip, Ticket-001")]
         public void ConcatenateStrings()
         {
             //Arrange
