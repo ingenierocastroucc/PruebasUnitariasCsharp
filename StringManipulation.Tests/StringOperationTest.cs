@@ -12,11 +12,36 @@ namespace StringManipulation.Tests
         [Fact]
         public void ConcatenateStrings()
         {
+            //Arrange
             var strOperations = new StringOperations();
-
+            //Act
             var result = strOperations.ConcatenateStrings("Hola", "Pedro");
-
+            //Assert
+            Assert.NotNull(result);
+            Assert.NotEmpty(result);
             Assert.Equal("Hola Pedro", result);
+        }
+
+        [Fact]
+        public void IsPalindrome_True()
+        {
+            //Arrange
+            var strOperations = new StringOperations();
+            //Act
+            var result = strOperations.IsPalindrome("Exe");
+            //Assert
+            Assert.True(result);
+        }
+
+        [Fact]
+        public void IsPalindrome_False()
+        {
+            //Arrange
+            var strOperations = new StringOperations();
+            //Act
+            var result = strOperations.IsPalindrome("Exec");
+            //Assert
+            Assert.False(result);
         }
     }
 }
