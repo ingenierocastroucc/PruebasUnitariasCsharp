@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Xunit;
+using Xunit.Sdk;
 
 namespace StringManipulation.Tests
 {
@@ -53,6 +54,43 @@ namespace StringManipulation.Tests
             var result = strOperations.RemoveWhitespace("Exec ute");
             //Assert
             Assert.Equal("Execute", result);
+        }
+
+        [Fact]
+        public void QuantintyInWords()
+        {
+            //Arrange
+            var strOperations = new StringOperations();
+            //Act
+            var result = strOperations.QuantintyInWords("Exec", 7);
+            //Assert
+            Assert.StartsWith("siete", result);
+            Assert.Contains("Exec", result);
+        }
+
+        [Fact]
+        public void GetStringLength_Exception()
+        {
+            //Arrange
+            var strOperations = new StringOperations();
+            //Act
+            //Para esta funcion en particular se dispara una excepcion por lo tanto no puede llevarse acabo el AAA
+            //Assert
+            Assert.ThrowsAny<ArgumentNullException>(()=>strOperations.GetStringLength(null));
+        }
+
+        [Fact]
+        public void GetStringLength_String()
+        {
+            //Arrange
+            var strOperations = new StringOperations();
+            //Act
+            var stringText = "Pedro";
+
+            var lengthText = strOperations.GetStringLength(stringText); ;
+
+            //Assert
+            Assert.Equal(stringText.Length, lengthText);
         }
     }
 }
