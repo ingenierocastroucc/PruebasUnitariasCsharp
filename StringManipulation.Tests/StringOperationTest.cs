@@ -92,5 +92,18 @@ namespace StringManipulation.Tests
             //Assert
             Assert.Equal(stringText.Length, lengthText);
         }
+
+        [Theory]
+        [InlineData("V", 5)]
+        [InlineData("VI", 6)]
+        public void FromRomanToNumber(string numeroRomano, int numero)
+        {
+            //Arrange
+            var strOperations = new StringOperations();
+            //Act
+            var result = strOperations.FromRomanToNumber(numeroRomano);
+            //Assert
+            Assert.Equal(numero, result);
+        }
     }
 }
