@@ -122,5 +122,22 @@ namespace StringManipulation.Tests
             //Assert
             Assert.Equal(2, result);
         }
+
+        [Fact]
+        public void ReadFile()
+        {
+            //Arrange
+
+            var strOperations = new StringOperations();
+
+            var mockFileReader = new Mock<IFileReaderConector>();
+            mockFileReader.Setup(p => p.ReadString(It.IsAny<string>())).Returns("Reading file");
+
+            //Act
+            var result = strOperations.ReadFile(mockFileReader.Object, "file.txt");
+
+            //Assert
+            Assert.Equal("Reading file", result);
+        }
     }
 }
