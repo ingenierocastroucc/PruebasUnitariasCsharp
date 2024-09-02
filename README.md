@@ -8,6 +8,7 @@ Contiene codigo C# para pruebas unitarias:
 * Mock funciones
 * Cobertura de pruebas
 * Coverlet
+* Estructura AAA
 * Perfil profesional: [ Linkedin ](https://www.linkedin.com/in/pedro-jose-castro-colon "Perfil profesional")
 
 ## En este repo podras encontrar contenido C#
